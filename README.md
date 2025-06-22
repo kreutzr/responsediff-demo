@@ -1,9 +1,8 @@
 # responsediff-demo
 
-This project provides a simple REST interface to illustrate the ResponseDiff behavior in action.
+This project provides a simple REST interface to illustrate the [ResponseDiff](https://github.com/kreutzr/responsediff) behavior in action.
 
 You may run separate webservers (for reference, control and candidate) on different ports (e.g., 3000, 3001, 3002) with a simple directory structure as follows:
-
 ```
 responsediff-demo/
 ├── server.js
@@ -16,7 +15,6 @@ responsediff-demo/
 ```
 
 or use only one single webserver as follows:
-
 ```
 responsediff-demo/
 ├── server.js
@@ -41,9 +39,15 @@ responsediff-demo/
 
 You will find a ready setup example in folder `regression`.
 
+To simulate a login, this service provides a "/login" POST endpoint which will return a response as JSON (e.g., "{ 'uuid': '2869e288-eb05-4e16-be22-0af3c2308469' }").
+The `login` endpoint is provided on root and first level.
+```
+curl -v -X POST http://localhost:3000/login
+curl -v -X POST http://localhost:3000/v1.0.0/login
+```
+
 # How to get started
 With having node.js installed simply call
-
 ```
 node server.js
 ```
