@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <XmlResponseDiffSetup id="Setup 00-01">
   <testSet id="Person">
@@ -11,5 +12,6 @@
       <description>HINT: The image has changed.</description>
       <request endpoint="${MYTOOL}/person.png" />
     </test>
+
   </testSet>
 </XmlResponseDiffSetup>
