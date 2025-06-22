@@ -1,0 +1,16 @@
+{
+  "name": "Kreutz",
+  "firstname": "Reinhard",
+  "id": 1000000000000000,
+  "number": 1,
+  "dateOfBirth": "1967-09-27",
+  "size": 1.94,
+  "hasPet": false,
+  "lastUpdated": "2025-06-22T14:07:43.872",
+  "timeSinceLastUpdate": "PT55.008S",
+  "children": [
+    { "id": 1, "character": "LOVELY", "gender": "FEMALE" },
+    { "id": 2, "character": "LOVELY", "gender": "MALE" }
+  ],
+  "favoriteFood": "Belgium fries"
+}

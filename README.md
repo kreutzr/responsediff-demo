@@ -1,4 +1,55 @@
 # responsediff-demo
-Simple REST interface to illustrate the responsediff behavior in action
 
-... work in progress ...
+This project provides a simple REST interface to illustrate the ResponseDiff behavior in action.
+
+You may run separate webservers (for reference, control and candidate) on different ports (e.g., 3000, 3001, 3002) with a simple directory structure as follows:
+
+```
+responsediff-demo/
+├── server.js
+├── package.json
+└── public/
+    ├──my-tool
+    │  ├── person.json
+    │  └── person.png
+    └── text.txt
+```
+
+or use only one single webserver as follows:
+
+```
+responsediff-demo/
+├── server.js
+├── package.json
+└── public/
+    ├── v1.0.0                 # reference
+    │    ├── my-tool
+    │    │   ├── person.json
+    │    │   └── person.png
+    │    └── text.txt
+    ├── v1.0.0-control         # control
+    │    ├── my-tool
+    │    │   ├── person.json
+    │    │   └── person.png
+    │    └── text.txt
+    └── v2.0.0-control         # candidate
+         ├── my-tool
+         │   ├── person.json
+         │   └── person.png
+         └── text.txt
+```
+
+You will find a ready setup example in folder `regression`.
+
+# How to get started
+With having node.js installed simply call
+
+```
+node server.js
+```
+
+and run ResponseDiff against this webserver(s) from another console.
+
+To stop the webserver(s) just press `Ctrl+C`.
+
+Enjoy!

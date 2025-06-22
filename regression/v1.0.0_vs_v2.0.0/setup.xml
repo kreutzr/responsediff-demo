@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XmlResponseDiffSetup id="ROOT SETUP">
+  <description>Setup description</description>
+
+  <filterRegistry>
+    <filter id="sortJsonBody" clazz="com.github.kreutzr.responsediff.filter.response.SortJsonBodyResponseFilter">
+      <parameters>
+         <parameter id="sortArrays">true</parameter>
+         <parameter id="sortArrays.keys">children($.id)</parameter>
+      </parameters>
+    </filter>
+    <filter id="textToJson" clazz="com.github.kreutzr.responsediff.filter.response.TextToJsonResponseFilter">
+      <parameters>
+         <parameter id="contentType">application/json</parameter>
+      </parameters>
+    </filter>
+    <filter id="xmlToJson" clazz="com.github.kreutzr.responsediff.filter.response.XmlToJsonResponseFilter">
+      <parameters>
+         <parameter id="contentType">application/json</parameter>
+         <parameter id="preserveOrder">true</parameter>
+         <parameter id="skipAttributes">false</parameter>
+         <parameter id="storeOriginalResponse">true</parameter>
+      </parameters>
+    </filter>
+  </filterRegistry>
+
+  <variables>
+     <variable id="MYTOOL">my-tool</variable>
+  </variables>
+
+  <testSet id="All demo tests" order="random" report="all" workPath="root">
+
+     <response>
+       <filters>
+         <filter id="sortJsonBody"/>
+       </filters>
+
+       <ignore forEver="true">
+         <header>date</header>
+         <explanation>Dates often differ</explanation>
+       </ignore>
+       <ignore forEver="true">
+         <header>etag</header>
+         <explanation>Etags are random</explanation>
+       </ignore>
+       <ignore forEver="true">
+         <header>last-modified</header>
+         <explanation>We ignore file change timestampos in this demo</explanation>
+       </ignore>
+       <ignore forEver="true">
+         <header>set-cookie</header>
+         <explanation>Cookie reference is random</explanation>
+       </ignore>
+     </response>
+
+
+     <test id="Text file">
+       <description>HINT: There is a typo in the text.</description>
+       <request endpoint="text.txt" />
+       <response>
+        <filters inherit="false">
+          <filter id="textToJson"/>
+          <filter id="sortJsonBody"/>
+        </filters>
+       </response>
+     </test>
+
+
+     <testSetInclude file="person/person.xml" />
+
+  </testSet>
+
+</XmlResponseDiffSetup>

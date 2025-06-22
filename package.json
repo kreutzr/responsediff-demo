@@ -1,0 +1,15 @@
+{
+  "name": "responsediff-demo",
+  "version": "1.0.0",
+  "description": "Simple Node Webservice, that delivers files according to their endpoint pathes (including subdirectories)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "kreutzr",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  }
+}

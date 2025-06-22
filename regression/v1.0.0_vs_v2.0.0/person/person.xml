@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XmlResponseDiffSetup id="Setup 00-01">
+  <testSet id="Person">
+
+    <test id="Test Json">
+      <description>HINT: The "children" array is ordered differently and in "v2.0.0" a new attribute "hobbies" is added.</description>
+      <request endpoint="${MYTOOL}/person.json" />
+    </test>
+
+    <test id="Test PNG" >
+      <description>HINT: The image has changed.</description>
+      <request endpoint="${MYTOOL}/person.png" />
+    </test>
+  </testSet>
+</XmlResponseDiffSetup>
