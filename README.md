@@ -1,3 +1,5 @@
+<img src="doc/img/responsediff-logo_320x160.png" alt="ResponseDiff"/>
+
 # responsediff-demo
 
 This project provides a simple REST interface to illustrate the [ResponseDiff](https://github.com/kreutzr/responsediff) behavior in action.
