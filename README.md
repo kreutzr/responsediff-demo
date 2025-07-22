@@ -64,7 +64,7 @@ docker logs <CONTAINER ID>
 ```
 
 ### Using node.js
-With having node.js installed alternatively call:
+With having node.js installed alternatively call (and see response changes in the "public/" folder immediately):
 ```
 node server.js
 ```
