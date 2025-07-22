@@ -11,5 +11,6 @@
   "children": [
     { "id": 1, "character": "LOVELY", "gender": "FEMALE" },
     { "id": 2, "character": "LOVELY", "gender": "MALE" }
-  ]
+  ],
+  "favoriteFood": "Belgium fries"
 }
